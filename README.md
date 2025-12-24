@@ -22,4 +22,3 @@ python -m tictactoe --ui <cli|tk> --size <N> [--k <K>] --x <human|mcts|q> --o <h
 --o ... — кто играет за O
 
 q (Q-learning) работает только на 3×3 и K=3
-

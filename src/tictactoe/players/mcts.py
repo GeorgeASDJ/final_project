@@ -39,8 +39,14 @@ class MCTSBot(Player):
 
     def choose_move(self, state: GameState) -> Move:
         root = Node(state=state, parent=None, move=None)
-
-        for _ in range(self.iterations):
+        size = state.board.size
+        if size == 3:
+            iter = 1500
+        elif size == 4:
+            iter = 5000
+        elif size == 5:
+            iter = 20000
+        for _ in range(iter):
             leaf = self._select(root)
             expanded = self._expand(leaf)
             result = self._rollout(expanded.state)
